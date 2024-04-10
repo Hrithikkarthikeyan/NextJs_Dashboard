@@ -66,7 +66,7 @@ function CardElement() {
               <div>
                 <Card className="max-w-[230px] mt-5 h-[85px]">
                   <CardBody>
-                    <div className='text-base'>Today's Received</div>
+                    <div className='text-base'>Today&apos;s Received</div>
                     <div className='text-xl font-semibold'>$2890</div>
                   </CardBody>
                 </Card>
@@ -74,7 +74,7 @@ function CardElement() {
               <div>
                 <Card className="max-w-[230px] mt-1 h-[85px]">
                   <CardBody>
-                  <div className='text-base'>Today's Received</div>
+                  <div className='text-base'>Today&apos;s Received</div>
                     <div className='text-xl font-semibold'>$82,890</div>
                   </CardBody>
                 </Card>

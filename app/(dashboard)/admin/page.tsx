@@ -21,7 +21,7 @@ const page = async () => {
             <CardElement />
           </div>
         </div>
-        <div className="basis-1/4 bg-teal-900 text-white">
+        <div id="right-side-bar" className="hide basis-1/4 bg-teal-900 text-white">
           <RightSidebar />
         </div>
       </div>

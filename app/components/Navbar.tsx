@@ -54,6 +54,9 @@ const Navbar = async () => {
               Sign in
             </Link>
           )}
+      <Button>
+        X
+      </Button>
     </NavbarComponent>
   );
 };
