@@ -4,7 +4,7 @@ import { Chart } from 'chart.js/auto';
 var chart: Chart<"bar", number[], string>;
 function BarGraph() {
   useEffect(() => {
-    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx = document.getElementById('myChart')!.getContext('2d');
     if(chart){
       chart.destroy();
     }

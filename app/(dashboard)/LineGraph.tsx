@@ -5,7 +5,7 @@ var chart: Chart<"line", number[], string>;
 
 function LineGraph() {
   useEffect(() => {
-    var ctx = document.getElementById('lineChart').getContext('2d');
+    var ctx = document.getElementById('lineChart')!.getContext('2d');
     if(chart){
       chart.destroy();
     }

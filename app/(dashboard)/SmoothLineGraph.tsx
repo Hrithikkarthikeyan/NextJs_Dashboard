@@ -5,7 +5,7 @@ var chart: Chart<"line", number[], string>;
 
 function SmoothLineGraph() {
   useEffect(() => {
-    var ctx = document.getElementById('smoothLineChart').getContext('2d');
+    var ctx = document.getElementById('smoothLineChart')!.getContext('2d');
     if(chart){
       chart.destroy();
     }
@@ -24,13 +24,6 @@ function SmoothLineGraph() {
         plugins: {
           legend: {
             display: false
-          }
-        },
-        tooltips: {
-          callbacks: {
-            label: function(tooltipItem) {
-              return tooltipItem.yLabel;
-            }
           }
         },
         scales: {
