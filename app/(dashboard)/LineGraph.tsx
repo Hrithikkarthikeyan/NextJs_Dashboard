@@ -5,7 +5,9 @@ var chart: Chart<"line", number[], string>;
 
 function LineGraph() {
   useEffect(() => {
-    var ctx = document.getElementById('lineChart')!.getContext('2d');
+    // var ctx = document.getElementById('lineChart')!.getContext('2d');
+    const canvas = document.getElementById('lineChart');
+    const ctx: CanvasRenderingContext2D = (canvas as HTMLCanvasElement).getContext('2d')!;
     if(chart){
       chart.destroy();
     }
@@ -24,13 +26,6 @@ function LineGraph() {
         plugins: {
           legend: {
             display: false
-          }
-        },
-        tooltips: {
-          callbacks: {
-            label: function(tooltipItem) {
-              return tooltipItem.yLabel;
-            }
           }
         },
         scales: {

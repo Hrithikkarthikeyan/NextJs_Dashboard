@@ -5,7 +5,8 @@ var chart: Chart<"line", number[], string>;
 
 function SmoothLineGraph() {
   useEffect(() => {
-    var ctx = document.getElementById('smoothLineChart')!.getContext('2d');
+    const canvas = document.getElementById('smoothLineChart');
+    const ctx: CanvasRenderingContext2D = (canvas as HTMLCanvasElement).getContext('2d')!;
     if(chart){
       chart.destroy();
     }
