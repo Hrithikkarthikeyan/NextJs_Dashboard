@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from './components/Navbar';
 import { Toaster } from "@/app/components/ui/toaster";
 import Provider from "./components/Provider";
+import RightSidebar from "./components/RightSidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto_mono = Roboto_Mono({
@@ -26,7 +27,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <Provider>
           <main className='h-screen flex flex-col'>
-            <Navbar />
             {children}
           </main>
           <Toaster />
