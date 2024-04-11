@@ -3,8 +3,8 @@ import React from 'react'
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button} from "@nextui-org/react";
 import UsersNavbar from './UsersNavbar';
 
-async function deleteUser(id: number | null) {
-  await fetch(`/api/user`, { method: "DELETE", body:JSON.stringify({'id': id}) });
+async function deleteUser(id: number | null, urlPrefix: string) {
+  await fetch(urlPrefix + `/api/user`, { method: "DELETE", body: JSON.stringify({'id': id}) });
   location.reload();
 }
 
@@ -36,7 +36,7 @@ async function page() {
               <TableRow key={user.id}>
                 <TableCell>{user.username}</TableCell>
                 <TableCell>{user.email}</TableCell>
-                <TableCell><Button onClick={() => deleteUser(user.id)} size='sm' color="danger" >Delete</Button></TableCell>
+                <TableCell><Button onClick={() => deleteUser(user.id, urlPrefix)} size='sm' color="danger" >Delete</Button></TableCell>
               </TableRow>
             ))}
           </TableBody>
