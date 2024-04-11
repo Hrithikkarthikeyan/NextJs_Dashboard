@@ -4,7 +4,7 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button}
 import UsersNavbar from './UsersNavbar';
 
 async function deleteUser(id: number | null, urlPrefix: string) {
-  await fetch(urlPrefix + `/api/user`, { method: "DELETE", body: JSON.stringify({'id': id}), headers:{
+  const deletedUser = await fetch(urlPrefix + `/api/user`, { method: "DELETE", body: JSON.stringify({'id': id}), headers:{
     accept: 'application/json',
     'User-agent': 'Dashboard',
   }});
@@ -12,6 +12,7 @@ async function deleteUser(id: number | null, urlPrefix: string) {
 }
 
 async function page() {
+  try{
   var urlPrefix = ``
   const env = process.env.NODE_ENV
   if(env == "development"){
@@ -48,6 +49,9 @@ async function page() {
     </div>
 
   )
+  }catch(error){
+    console.log(error);
+  }
 }
 
 export default page
