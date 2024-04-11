@@ -53,7 +53,7 @@ function BarGraph() {
 return (
     <>
       <div className="">
-        <div className=' rounded-xl w-[600px] h-[160px]'>
+        <div className=' rounded-xl max-w-[600px] h-[170px]'>
           <canvas id='myChart'></canvas>
         </div>
       </div>

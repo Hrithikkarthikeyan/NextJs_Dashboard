@@ -1,6 +1,8 @@
 'use client';
 import React from 'react'
 import {Navbar, NavbarContent, NavbarItem, Link, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
+import { signOut } from 'next-auth/react'
+import BarsIcon from './ui/barsIcon';
 
 const RightNavbar = ({session} : {session:any}) => {
   return (
@@ -60,15 +62,21 @@ const RightNavbar = ({session} : {session:any}) => {
           <DropdownMenu aria-label="Profile Actions" variant="flat">
             <DropdownItem key="profile" className="h-14 gap-2">
               <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">zoey@example.com</p>
+              <p className="font-semibold">{session?.user.email}</p>
             </DropdownItem>
-            <DropdownItem key="settings">My Settings</DropdownItem>
-            <DropdownItem key="team_settings">Team Settings</DropdownItem>
+            <DropdownItem key="all_user"><Link href="/users">All Users</Link></DropdownItem>
+            <DropdownItem key="update_profile"><Link href="/user/edit">Update Profile</Link></DropdownItem>
             <DropdownItem key="logout" color="danger">
-              Log Out
+              <Link onClick={() => signOut({
+                redirect: true,
+                callbackUrl: `${window.location.origin}/sign-in`
+              })}>
+                Sign out
+              </Link>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        <BarsIcon />
     </Navbar>
   )
 }

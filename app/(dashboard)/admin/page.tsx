@@ -13,7 +13,7 @@ const page = async () => {
     return (
       
       <div className="flex flex-row">
-        <div className="basis-3/4">
+        <div id="main-dashboard" className="basis-3/4 max-[900px]:basis-full" >
           <Navbar />
           <div className="ml-10 mt-10">
             {/* <h2 className='text-2xl'>Next Dashboard - welcome back {session?.user.username}</h2> */}
@@ -21,7 +21,7 @@ const page = async () => {
             <CardElement />
           </div>
         </div>
-        <div id="right-side-bar" className="hide basis-1/4 bg-teal-900 text-white">
+        <div id="right-side-bar" className="max-[900px]:hidden basis-1/4 max-[900px]:basis-full bg-teal-900 text-white">
           <RightSidebar />
         </div>
       </div>

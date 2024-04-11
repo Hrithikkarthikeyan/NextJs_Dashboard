@@ -1,14 +1,11 @@
-// import Link from 'next/link';
-import { Button, buttonVariants } from './ui/button';
+'use client';
+import React from 'react'
 import { HandMetal } from 'lucide-react';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
-import UserAccountnav from './ui/UserAccountnav';
-import {Navbar as NavbarComponent, NavbarBrand, NavbarContent, NavbarItem, Link, Input} from "@nextui-org/react";
-import BarsIcon from './ui/barsIcon';
+import UserAccountnav from '../components/ui/UserAccountnav';
+import {Navbar as NavbarComponent, NavbarBrand, Input, NavbarContent, NavbarItem, Link, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 
-const Navbar = async () => {
-  const session = await getServerSession(authOptions);
+
+function UsersNavbar() {
   return (
     <NavbarComponent>
         <NavbarBrand className="mr-4">
@@ -48,16 +45,28 @@ const Navbar = async () => {
           type="search"
         />
       </NavbarContent>
-      {session?.user ? (
-            <UserAccountnav />
-          ) : (
-            <Link className={buttonVariants()} href='/sign-in'>
-              Sign in
-            </Link>
-          )}
-        <BarsIcon />
+      <UserAccountnav />
+      <Dropdown placement="bottom-end">
+          <DropdownTrigger>
+            <Avatar
+              isBordered
+              as="button"
+              className="transition-transform"
+              color="secondary"
+              name="Jason Hughes"
+              size="sm"
+              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+            />
+          </DropdownTrigger>
+          <DropdownMenu aria-label="Profile Actions" variant="flat">
+            <DropdownItem key="update_profile"><Link href="/admin">Dashboard</Link></DropdownItem>
+            <DropdownItem key="all_user"><Link href="/users">All Users</Link></DropdownItem>
+            <DropdownItem key="update_profile"><Link href="/user/edit">Update Profile</Link></DropdownItem>
+          
+          </DropdownMenu>
+        </Dropdown>
     </NavbarComponent>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default UsersNavbar

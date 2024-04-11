@@ -51,7 +51,7 @@ function SmoothLineGraph() {
   }, []);
   return (
     <div className="mt-5">
-      <div className=' rounded-xl w-[280px] h-[250px]'>
+      <div className=' rounded-xl w-[280px] h-[170px]'>
         <canvas id='smoothLineChart'></canvas>
       </div>
     </div>

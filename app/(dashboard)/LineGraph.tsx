@@ -44,7 +44,7 @@ function LineGraph() {
   }, []);
   return (
     <>
-      <div className=' rounded-xl w-[600px] h-[180px]'>
+      <div className=' rounded-xl w-[400px] max-[600px]:w-[280px] h-[180px]'>
         <canvas id='lineChart'></canvas>
       </div>
     </>
