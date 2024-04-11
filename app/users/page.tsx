@@ -5,12 +5,19 @@ import UsersNavbar from './UsersNavbar';
 
 async function deleteUser(id: number | null) {
   await fetch(`/api/user`, { method: "DELETE", body:JSON.stringify({'id': id}) });
-  debugger;
   location.reload();
 }
 
 async function page() {
-  const usersResponse = await fetch(`http://localhost:3000/api/users`, {method: "GET"})
+  var urlPrefix = ``
+  const env = process.env.NODE_ENV
+  if(env == "development"){
+    urlPrefix = `http://localhost:3000`
+  }
+  else if (env == "production"){
+    urlPrefix = `https://next-js-dashboard-pink-six.vercel.app`
+  }
+  const usersResponse = await fetch(urlPrefix + `/api/users`, {method: "GET"})
   const users = await usersResponse.json();
   const usersJson = JSON.stringify(users);
   const allUsers = JSON.parse(usersJson).users;
