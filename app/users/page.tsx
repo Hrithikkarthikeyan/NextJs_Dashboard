@@ -4,7 +4,10 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button}
 import UsersNavbar from './UsersNavbar';
 
 async function deleteUser(id: number | null, urlPrefix: string) {
-  await fetch(urlPrefix + `/api/user`, { method: "DELETE", body: JSON.stringify({'id': id}) });
+  await fetch(urlPrefix + `/api/user`, { method: "DELETE", body: JSON.stringify({'id': id}), headers:{
+    accept: 'application/json',
+    'User-agent': 'Dashboard',
+  }});
   location.reload();
 }
 
