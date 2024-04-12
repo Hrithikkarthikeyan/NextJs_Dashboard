@@ -27,7 +27,7 @@ async function page() {
   const allUsers = JSON.parse(usersJson).users;
   return (
     <div>
-      <UsersNavbar />
+      {/* <UsersNavbar /> */}
       <div className=" rounded-md m-auto w-[800px]">
         <Table className="m-auto">
           <TableHeader>

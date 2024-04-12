@@ -59,7 +59,7 @@ function UsersNavbar() {
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="update_profile"><Link href="/admin">Dashboard</Link></DropdownItem>
+            <DropdownItem key="admin"><Link href="/admin">Dashboard</Link></DropdownItem>
             <DropdownItem key="all_user"><Link href="/users">All Users</Link></DropdownItem>
             <DropdownItem key="update_profile"><Link href="/user/edit">Update Profile</Link></DropdownItem>
           
