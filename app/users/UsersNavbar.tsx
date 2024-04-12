@@ -14,19 +14,19 @@ function UsersNavbar() {
           </Link>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-3 content-center text-center" justify='center'>
-          <NavbarItem isActive>
-            <Link color="foreground" href="#" className="mr-10">
-              Home
+          <NavbarItem>
+            <Link color="foreground" href="/admin" className="mr-10">
+              Dashboard
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link href="#" aria-current="page" color="primary" className="mr-10">
-              Settings
+            <Link href="/users" aria-current="page" color="primary" className="mr-10">
+              Users
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#" className="mr-10">
-              Help
+            <Link color="foreground" href="/user/edit" className="mr-10">
+              Edit Profile
             </Link>
           </NavbarItem>
         </NavbarContent>
@@ -46,25 +46,25 @@ function UsersNavbar() {
         />
       </NavbarContent>
       <UserAccountnav />
-      <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-              color="secondary"
-              name="Jason Hughes"
-              size="sm"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-            />
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="admin"><Link href="/admin">Dashboard</Link></DropdownItem>
-            <DropdownItem key="all_user"><Link href="/users">All Users</Link></DropdownItem>
-            <DropdownItem key="update_profile"><Link href="/user/edit">Update Profile</Link></DropdownItem>
-          
-          </DropdownMenu>
-        </Dropdown>
+      {/* <Dropdown placement="bottom-end">
+        <DropdownTrigger>
+          <Avatar
+            isBordered
+            as="button"
+            className="transition-transform"
+            color="secondary"
+            name="Jason Hughes"
+            size="sm"
+            src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+          />
+        </DropdownTrigger>
+        <DropdownMenu aria-label="Profile Actions" variant="flat">
+          <DropdownItem key="admin"><Link href="/admin">Dashboard</Link></DropdownItem>
+          <DropdownItem key="all_user"><Link href="/users">All Users</Link></DropdownItem>
+          <DropdownItem key="update_profile"><Link href="/user/edit">Update Profile</Link></DropdownItem>
+        
+        </DropdownMenu>
+      </Dropdown> */}
     </NavbarComponent>
   )
 }

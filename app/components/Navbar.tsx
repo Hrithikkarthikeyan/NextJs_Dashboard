@@ -17,19 +17,19 @@ const Navbar = async () => {
           </Link>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-3 content-center text-center" justify='center'>
-          <NavbarItem isActive>
-            <Link color="foreground" href="#" className="mr-10">
-              Home
+          <NavbarItem>
+            <Link color="foreground" href="/admin" className="mr-10">
+              Dashboard
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link href="#" aria-current="page" color="primary" className="mr-10">
-              Settings
+            <Link href="/users" aria-current="page" color="primary" className="mr-10">
+              Users
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#" className="mr-10">
-              Help
+            <Link color="foreground" href="/user/edit" className="mr-10">
+              Edit Profile
             </Link>
           </NavbarItem>
         </NavbarContent>
