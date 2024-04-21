@@ -4,7 +4,7 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button}
 import UsersNavbar from './UsersNavbar';
 
 async function deleteUser(id: number | null, urlPrefix: string) {
-  const deletedUser = await fetch(urlPrefix + `/api/user`, { method: "DELETE", body: JSON.stringify({'id': id}), headers:{
+  const deletedUser = await fetch(urlPrefix + `/api/user`, { next : { revalidate: 0}, method: "DELETE", body: JSON.stringify({'id': id}), headers:{
     accept: 'application/json',
     'User-agent': 'Dashboard',
   }});
@@ -21,7 +21,7 @@ async function page() {
   else if (env == "production"){
     urlPrefix = `https://next-js-dashboard-pink-six.vercel.app`
   }
-  const usersResponse = await fetch(urlPrefix + `/api/users`, {method: "GET"})
+  const usersResponse = await fetch(urlPrefix + `/api/users`, { next : { revalidate: 0}, method: "GET"})
   const users = await usersResponse.json();
   const usersJson = JSON.stringify(users);
   const allUsers = JSON.parse(usersJson).users;
