@@ -59,13 +59,13 @@ const SignUpForm = () => {
         password: values.password
       })
     })
-    
+    const temp = await response.json();
     if(response.ok){
       router.push('/sign-in')
     }else{
       toast({
         title: "Error",
-        description: "Oops, Something went wrong",
+        description: temp.message,
         variant: 'destructive'
       })
     }
