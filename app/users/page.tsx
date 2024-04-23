@@ -2,6 +2,7 @@
 import React from 'react'
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button} from "@nextui-org/react";
 import UsersNavbar from './UsersNavbar';
+import User from './User';
 
 async function deleteUser(id: number | null, urlPrefix: string) {
   const deletedUser = await fetch(urlPrefix + `/api/user`, { next : { revalidate: 0}, method: "DELETE", body: JSON.stringify({'id': id}), headers:{
@@ -25,6 +26,8 @@ async function page() {
   const users = await usersResponse.json();
   const usersJson = JSON.stringify(users);
   const allUsers = JSON.parse(usersJson).users;
+  // const userId = User();
+  
   return (
     <div>
       <UsersNavbar />

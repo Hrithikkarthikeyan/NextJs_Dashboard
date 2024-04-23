@@ -5,6 +5,8 @@ import CardElement from '../CardElement';
 import PageNavbar from '../PageNavbar';
 import Navbar from '@/app/components/Navbar';
 import RightSidebar from '@/app/components/RightSidebar';
+import { redirect } from 'next/navigation'
+
 
 const page = async () => {
   const session = await getServerSession(authOptions);
@@ -28,7 +30,8 @@ const page = async () => {
     )
   }
 
-  return <h2 className='text-2xl'>Please login to see the dashbaord</h2>;
+    redirect('/sign-in');
+  
 }
 
 export default page;

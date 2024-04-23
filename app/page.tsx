@@ -3,10 +3,11 @@ import { buttonVariants } from './components/ui/button';
 import User from './components/User';
 import { authOptions } from '@/lib/auth';
 import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation'
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-
+  redirect('/sign-in');
   return (
     <div>
       <h1 className='text-4xl'>Home</h1>
